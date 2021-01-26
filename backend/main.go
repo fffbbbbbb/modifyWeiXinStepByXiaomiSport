@@ -16,6 +16,7 @@ func init() {
 }
 func main() {
 	r := gin.Default()
+	r.Use(controller.Cors())
 	r.POST("/modifyStep", controller.ModifyStep)
 	//初始化http配置
 	s := &http.Server{
